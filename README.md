@@ -36,13 +36,13 @@ https://clique-desenhe-backend-production.up.railway.app/random-image
   <tr>
     <td><code>page</code></td>
     <td>number</td>
-    <td>❌ Não</td>
+    <td>✅ Sim</td>
     <td>Página da API do Pixabay</td>
   </tr>
   <tr>
     <td><code>index</code></td>
     <td>number</td>
-    <td>❌ Não</td>
+   <td>✅ Sim</td>
     <td>Índice da imagem retornada</td>
   </tr>
 </table>
