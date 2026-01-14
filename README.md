@@ -6,7 +6,7 @@ A API consome dados do **Pixabay** e retorna imagens com metadados como autor, l
 
 ---
 
-<h2>🌐 Endpoint de Produção</h2>
+<h2>Endpoint de Produção</h2>
 
 <p>
 <strong>GET</strong>
@@ -18,7 +18,7 @@ https://clique-desenhe-backend-production.up.railway.app/random-image
 
 ---
 
-<h2>🔎 Query Params</h2>
+<h2>Query Params</h2>
 
 <table>
   <tr>
@@ -49,7 +49,7 @@ https://clique-desenhe-backend-production.up.railway.app/random-image
 
 ---
 
-<h2>🗂️ Categorias Disponíveis</h2>
+<h2>Categorias Disponíveis</h2>
 
 <pre>
 backgrounds
@@ -76,7 +76,7 @@ music
 
 ---
 
-<h2>📏 Regras de Validação</h2>
+<h2>Regras de Validação</h2>
 
 <h3>page</h3>
 <ul>
@@ -91,12 +91,12 @@ music
 </ul>
 
 <p>
-⚠️ O parâmetro <code>index</code> define qual imagem será escolhida dentro da página retornada.
+O parâmetro <code>index</code> define qual imagem será escolhida dentro da página retornada.
 </p>
 
 ---
 
-<h2>🧪 Exemplo de Requisição</h2>
+<h2>Exemplo de Requisição</h2>
 
 <pre>
 GET https://clique-desenhe-backend-production.up.railway.app/random-image?category=food&page=2&index=2
@@ -104,7 +104,7 @@ GET https://clique-desenhe-backend-production.up.railway.app/random-image?catego
 
 ---
 
-<h2>📦 Exemplo de Resposta</h2>
+<h2>Exemplo de Resposta</h2>
 
 <pre>
 {
@@ -120,7 +120,7 @@ GET https://clique-desenhe-backend-production.up.railway.app/random-image?catego
 
 ---
 
-<h2>🛠️ Tecnologias Utilizadas</h2>
+<h2>Tecnologias Utilizadas</h2>
 
 <ul>
   <li>Node.js</li>
@@ -133,7 +133,7 @@ GET https://clique-desenhe-backend-production.up.railway.app/random-image?catego
 
 ---
 
-<h2>📦 Como Rodar Localmente</h2>
+<h2>Como Rodar Localmente</h2>
 
 <ol>
   <li>git clone https://github.com/NicklausGabriel/clique-desenhe-backend.git</li>
@@ -141,20 +141,3 @@ GET https://clique-desenhe-backend-production.up.railway.app/random-image?catego
   <li>npm install</li>
   <li>npm run start:dev</li>
 </ol>
-
----
-
-<h2>🤝 Contribuição</h2>
-
-<p>
-Pull Requests são bem-vindos.<br/>
-Para mudanças maiores, abra uma issue antes para discussão.
-</p>
-
----
-
-<h2>📄 Licença</h2>
-
-<p>
-MIT © Gabriel Avelar
-</p>
