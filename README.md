@@ -1,99 +1,160 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+<h1>Clique & Desenhe – Random Image API (NestJS)</h1>
+
+API REST desenvolvida para fornecer **imagens aleatórias por categoria**, servindo como base para aplicações de estudo de desenho, ilustração e referências visuais.
+
+A API consome dados do **Pixabay** e retorna imagens com metadados como autor, likes e visualizações.
+
+---
+
+<h2>🌐 Endpoint de Produção</h2>
+
+<p>
+<strong>GET</strong>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<pre>
+https://clique-desenhe-backend-production.up.railway.app/random-image
+</pre>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+---
+
+<h2>🔎 Query Params</h2>
+
+<table>
+  <tr>
+    <th>Parâmetro</th>
+    <th>Tipo</th>
+    <th>Obrigatório</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td><code>category</code></td>
+    <td>string</td>
+    <td>✅ Sim</td>
+    <td>Categoria da imagem</td>
+  </tr>
+  <tr>
+    <td><code>page</code></td>
+    <td>number</td>
+    <td>❌ Não</td>
+    <td>Página da API do Pixabay</td>
+  </tr>
+  <tr>
+    <td><code>index</code></td>
+    <td>number</td>
+    <td>❌ Não</td>
+    <td>Índice da imagem retornada</td>
+  </tr>
+</table>
+
+---
+
+<h2>🗂️ Categorias Disponíveis</h2>
+
+<pre>
+backgrounds
+fashion
+nature
+science
+education
+feelings
+health
+people
+religion
+places
+animals
+industry
+computer
+food
+sports
+transportation
+travel
+buildings
+business
+music
+</pre>
+
+---
+
+<h2>📏 Regras de Validação</h2>
+
+<h3>page</h3>
+<ul>
+  <li>Valor mínimo: <strong>1</strong></li>
+  <li>Valor máximo: <strong>160</strong></li>
+</ul>
+
+<h3>index</h3>
+<ul>
+  <li>Valor mínimo: <strong>0</strong></li>
+  <li>Valor máximo: <strong>2</strong></li>
+</ul>
+
+<p>
+⚠️ O parâmetro <code>index</code> define qual imagem será escolhida dentro da página retornada.
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<h2>🧪 Exemplo de Requisição</h2>
 
-## Project setup
+<pre>
+GET https://clique-desenhe-backend-production.up.railway.app/random-image?category=food&page=2&index=2
+</pre>
 
-```bash
-$ yarn install
-```
+---
 
-## Compile and run the project
+<h2>📦 Exemplo de Resposta</h2>
 
-```bash
-# development
-$ yarn run start
+<pre>
+{
+  "reference": {
+    "author": "ELG21",
+    "url": "https://pixabay.com/get/gd45e945903b972ac2514c69bfc0d9c278340ea9657d590049d962280c000441cc95141c25d6a6e5577c56e288a01687ab4d7192b45a889abbe971c8893ed3a25_1280.jpg",
+    "likes": 88,
+    "userPage": "https://pixabay.com/users/3764790/",
+    "views": 7050
+  }
+}
+</pre>
 
-# watch mode
-$ yarn run start:dev
+---
 
-# production mode
-$ yarn run start:prod
-```
+<h2>🛠️ Tecnologias Utilizadas</h2>
 
-## Run tests
+<ul>
+  <li>Node.js</li>
+  <li>NestJS</li>
+  <li>TypeScript</li>
+  <li>Axios</li>
+  <li>Pixabay API</li>
+  <li>Railway (deploy)</li>
+</ul>
 
-```bash
-# unit tests
-$ yarn run test
+---
 
-# e2e tests
-$ yarn run test:e2e
+<h2>📦 Como Rodar Localmente</h2>
 
-# test coverage
-$ yarn run test:cov
-```
+<ol>
+  <li>git clone https://github.com/NicklausGabriel/clique-desenhe-backend.git</li>
+  <li>cd clique-desenhe-backend</li>
+  <li>npm install</li>
+  <li>npm run start:dev</li>
+</ol>
 
-## Deployment
+---
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+<h2>🤝 Contribuição</h2>
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+<p>
+Pull Requests são bem-vindos.<br/>
+Para mudanças maiores, abra uma issue antes para discussão.
+</p>
 
-```bash
-$ yarn install -g @nestjs/mau
-$ mau deploy
-```
+---
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+<h2>📄 Licença</h2>
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-# clique-desenhe-backend
+<p>
+MIT © Gabriel Avelar
+</p>

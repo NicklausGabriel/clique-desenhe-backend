@@ -9,6 +9,7 @@ export class GetRandomImageDto {
   @Type(() => Number)
   @IsInt()
   @Min(1)
+  @Max(160)
   page: number;
 
   @Type(() => Number)
